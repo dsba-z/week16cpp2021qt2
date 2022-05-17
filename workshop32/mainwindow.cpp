@@ -11,6 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    
+    QObject::connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(testButton()));
+    
     // setting render area
     // (can't do through Designer because it doesn't have custom widgets)
     _renderArea = new RenderArea(ui->centralwidget);
@@ -47,6 +50,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::setLevelsSlot(int lvls)
 {
+    
+
     std::cout << lvls << "\n";
     _renderArea->setLevels(lvls);
 }
@@ -55,3 +60,14 @@ void MainWindow::on_spinBoxLevels_valueChanged(int lvls)
 {
 //    _renderArea->setLevels(lvls);
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    std::cout << "button" << std::endl;
+}
+
+void MainWindow::testButton()
+{
+    std::cout << "test" << std::endl;
+}
+

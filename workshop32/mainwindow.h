@@ -25,7 +25,12 @@ private slots:
     
     void setLevelsSlot(int lvls);
     void on_spinBoxLevels_valueChanged(int lvls);
-
+    
+    void on_pushButton_clicked();
+    void testButton();
+    
+    
+    
 private:
     Ui::MainWindow* ui;
     RenderArea* _renderArea;

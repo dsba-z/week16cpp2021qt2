@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>380</height>
+    <width>583</width>
+    <height>396</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -66,6 +66,13 @@
        </property>
       </spacer>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -83,7 +90,7 @@
      <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>700</x>
+     <x>582</x>
      <y>262</y>
     </hint>
    </hints>
@@ -99,7 +106,7 @@
      <y>80</y>
     </hint>
     <hint type="destinationlabel">
-     <x>774</x>
+     <x>582</x>
      <y>366</y>
     </hint>
    </hints>
@@ -108,5 +115,6 @@
  <slots>
   <slot>setLevelsSlot(int)</slot>
   <slot>slot1(int)</slot>
+  <slot>testButton()</slot>
  </slots>
 </ui>

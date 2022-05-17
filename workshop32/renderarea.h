@@ -10,7 +10,8 @@ public:
     explicit RenderArea(QWidget* parent = nullptr);
 
     void setLevels(int lvls);
-
+    
+    void drawCantor(QPainter& painter, int x, int y, int w, int h, int level);
 protected:
     int levels;
     void paintEvent(QPaintEvent* event) override;

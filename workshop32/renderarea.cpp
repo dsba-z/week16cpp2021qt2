@@ -23,6 +23,18 @@ void RenderArea::setLevels(int lvls)
     update();
 }
 
+void RenderArea::drawCantor(QPainter& painter, int x, int y, int w, int h, int level)
+{
+    if (level < 0)
+    {
+        return;
+    }
+    painter.drawRect(x, y, w, h);
+    
+    drawCantor(painter, x, y + h*2, w/3, h, level - 1);
+    drawCantor(painter, x + w*2.0/3, y + h*2, w/3, h, level - 1);
+}
+
 void RenderArea::paintEvent(QPaintEvent* /* event */)
 {
     // Initialize painter, the object that draws primitive shapes
@@ -48,14 +60,16 @@ void RenderArea::paintEvent(QPaintEvent* /* event */)
     // Task:
     // Convert this code to a function that takes a painter object and the number of levels
     int newHeight = 15;
+    int w = width();
     
-    painter.drawRect(0, 0, width(), newHeight);
+    drawCantor(painter, 0, 0, w, newHeight, levels);
+//    painter.drawRect(0, 0, width(), newHeight);
     
-    if (levels > 1)
-    {
-        //               x                y                width       height
-        painter.drawRect(0,               newHeight * 2, width() / 3, newHeight);
-        painter.drawRect(width() * 2 / 3, newHeight * 2, width() / 3, newHeight);
-    }
+//    if (levels > 1)
+//    {
+//        //               x                y                width       height
+//        painter.drawRect(0,               newHeight * 2, width() / 3, newHeight);
+//        painter.drawRect(width() * 2 / 3, newHeight * 2, width() / 3, newHeight);
+//    }
     
 }

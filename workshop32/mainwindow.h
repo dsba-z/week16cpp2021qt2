@@ -22,10 +22,12 @@ public:
 
 private slots:
 
-    
+    void buttonClickedSlot();
     void setLevelsSlot(int lvls);
     void on_spinBoxLevels_valueChanged(int lvls);
 
+    void on_pushButton_clicked();
+    
 private:
     Ui::MainWindow* ui;
     RenderArea* _renderArea;

@@ -12,6 +12,7 @@ public:
     void setLevels(int lvls);
 
 protected:
+    void drawCantor(QPainter& painter, int x, int y, int w, int h, int level);
     int levels;
     void paintEvent(QPaintEvent* event) override;
 

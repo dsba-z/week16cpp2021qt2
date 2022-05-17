@@ -10,6 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    
+    
+    QObject::connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(testTheButton()));
 
     // setting render area
     // (can't do through Designer because it doesn't have custom widgets)
@@ -35,8 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
     horLayout->addWidget(_renderArea);
     horLayout->addWidget(ui->grpSettings);
 
-    // trigger setting default parameters
-    on_spinBoxLevels_valueChanged(ui->spinBoxLevels->value());
 
 }
 
@@ -45,13 +46,29 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
+
+void MainWindow::testTheButton()
+{
+    std::cout << "button" <<std::endl;
+}
+
+
 void MainWindow::setLevelsSlot(int lvls)
 {
     std::cout << lvls << "\n";
     _renderArea->setLevels(lvls);
 }
 
-void MainWindow::on_spinBoxLevels_valueChanged(int lvls)
+void MainWindow::on_spinBoxLevels_valueChanged(int arg1)
 {
-//    _renderArea->setLevels(lvls);
+    std::cout <<"test" << std::endl;
 }
+
+
+void MainWindow::on_spinBoxLevels_textChanged(const QString &arg1)
+{
+    
+}
+

@@ -66,6 +66,13 @@
        </property>
       </spacer>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -89,18 +96,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBoxLevels</sender>
-   <signal>valueChanged(int)</signal>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>slot1(int)</slot>
+   <slot>testTheButton()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>410</x>
-     <y>80</y>
+     <x>175</x>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
-     <x>774</x>
-     <y>366</y>
+     <x>1095</x>
+     <y>527</y>
     </hint>
    </hints>
   </connection>
@@ -108,5 +115,6 @@
  <slots>
   <slot>setLevelsSlot(int)</slot>
   <slot>slot1(int)</slot>
+  <slot>testTheButton()</slot>
  </slots>
 </ui>

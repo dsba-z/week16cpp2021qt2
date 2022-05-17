@@ -21,11 +21,11 @@ public:
     ~MainWindow();
 
 private slots:
-
-    
     void setLevelsSlot(int lvls);
     void on_spinBoxLevels_valueChanged(int lvls);
-
+    void testTheButton();
+    void on_spinBoxLevels_textChanged(const QString &arg1);
+    
 private:
     Ui::MainWindow* ui;
     RenderArea* _renderArea;
